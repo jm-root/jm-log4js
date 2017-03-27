@@ -1,5 +1,5 @@
 import chai from 'chai';
-import __ from 'jm-core';
+import $ from 'jm-core';
 import Logger from '../src/logger';
 
 let expect = chai.expect;
@@ -9,7 +9,7 @@ let log = function (logger) {
     });
 };
 describe('logger', function () {
-    let jm = __()
+    let jm = new $()
             .use(Logger)
         ;
 
