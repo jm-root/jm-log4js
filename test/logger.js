@@ -1,6 +1,6 @@
 import chai from 'chai';
 import $ from 'jm-core';
-import Logger from '../src/logger';
+import moduleLogger from '../src';
 
 let expect = chai.expect;
 let log = function (logger) {
@@ -10,12 +10,12 @@ let log = function (logger) {
 };
 describe('logger', function () {
     let jm = new $()
-            .use(Logger)
+            .use(moduleLogger)
         ;
 
     it('jm.logger', function () {
         expect(jm.logger).to.be.an('object');
-        expect(Logger).to.be.an('function');
+        expect(moduleLogger).to.be.an('function');
         log(jm.logger);
     });
 
@@ -28,10 +28,10 @@ describe('logger', function () {
 });
 
 describe('global', function () {
-    jm.use(Logger);
+    jm.use(moduleLogger);
     it('jm.logger', function () {
         expect(jm.logger).to.be.an('object');
-        expect(Logger).to.be.an('function');
+        expect(moduleLogger).to.be.an('function');
         log(jm.logger);
     });
 

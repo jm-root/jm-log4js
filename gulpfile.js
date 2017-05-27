@@ -47,5 +47,5 @@ gulp.task('pack', ['es6to5'], function() {
     return gulp.src('./lib/index.js');
 });
 
-gulp.task('default', gulpSequence('clean', ['pack']));
+gulp.task('default', gulpSequence('clean', ['es6to5']));
 
